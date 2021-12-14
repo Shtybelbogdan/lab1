@@ -1,0 +1,24 @@
+letters_ua = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЄЮЯАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЄЮЯ'
+letters_us = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+type_encryption = int(input('Значення: '))
+lang = input("Виберіть мову: ")
+message = input("Ведіть слово: ").upper()
+result = ''
+if lang == "ua":
+    for i in message:
+        place = letters_ua.find(i)
+        new_place = place + type_encryption
+        if i in letters_ua:
+       
+            result += letters_ua[new_place]
+        else:
+            result += i
+else:
+    for i in message:
+        place = letters_us.find(i)
+        new_place = place + type_encryption
+        if i in letters_us:
+            result += letters_us[new_place]
+        else:
+            result += i
+print(result.lower())
